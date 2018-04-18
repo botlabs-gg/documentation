@@ -4,12 +4,25 @@ This api provides images (reactions, characters, animals) for various categories
 
 Codename: `toph`
 
-Default permissions:
+#### Default permissions:
 
 |Permission name|description                            |environment |
 |---------------|---------------------------------------|------------|
 |image_data     | Allows you to access basic image data | staging    |
 |image_data     | Allows you to access basic image data | production |
+
+
+#### Toph CDN Endpoints:
+
+Toph uses the weeb.sh CDN to provide it's reaction images,
+depending on the environment of toph you are using,
+the base url of the returned image may be one of the following:
+
+| endpoint                           | environment | description                           |
+|------------------------------------|-------------|---------------------------------------|
+| https://cdn.weeb.sh/images         | production  | The production CDN endpoint for toph  |
+| https://cdn.weeb.sh/staging-images | staging     | The staging CDN endpoint for toph     |
+| https://cdn.weeb.sh/dev-images     | development | The development CDN endpoint for toph |
 
 ## Image Object
 
