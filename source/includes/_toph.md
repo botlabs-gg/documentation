@@ -12,10 +12,10 @@ Codename: `toph`
 |image_data     | Allows you to access basic image data | production |
 
 
-#### Toph CDN Endpoints:
+#### Image API CDN Endpoints:
 
-Toph uses the weeb.sh CDN to provide it's reaction images,
-depending on the environment of toph you are using,
+The image API uses the weeb.sh CDN to provide it's reaction images,
+depending on the environment of the image API you are using,
 the base url of the returned image may be one of the following:
 
 | endpoint                           | environment | description                           |
