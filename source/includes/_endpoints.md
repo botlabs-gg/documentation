@@ -1,6 +1,6 @@
 # Endpoints
 
-Weeb.sh provides apis on multiple base endpoints(environments), generally users are unlocked for the staging and production endpoint of an api, but in special cases users may only be unlocked for a single environment/endpoint.
+Weeb.sh provides APIs on multiple base endpoints(environments), generally users are unlocked for the staging and production endpoint of an api, but in special cases users may only be unlocked for a single environment/endpoint.
 
 ## API endpoints
 

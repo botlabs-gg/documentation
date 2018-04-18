@@ -9,7 +9,7 @@
 }
 ```
 
-Weeb.sh apis use an internal permission model to make sure that users are only allowed to use the endpoints they are whitelisted for.
+Weeb.sh APIs use an internal permission model to make sure that users are only allowed to use the endpoints they are whitelisted for.
 Those permissions are stored using permission keys, which consist of the api-codename, the environment and optionally a key to specify the endpoint/endpoints that may be used:
 `apicodename-environment:key`
 
