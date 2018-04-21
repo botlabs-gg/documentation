@@ -252,7 +252,6 @@ Did a user cheat reputation ? Just reset it!
 | name   | type    | description                      |
 |--------|---------|----------------------------------|
 | user   | User    | User object                      |
-| date   | date    | Current server time in UTC       |
 | status | integer | HTTP status code                 |
 
 ## Increase user reputation
