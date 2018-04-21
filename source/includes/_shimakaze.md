@@ -40,7 +40,7 @@ Timestamps are always in `UTC`
 | availableReputations     | integer    | How many reputations the user may give out                                                                   | x        |
 | nextAvailableReputations | integer[] | Array of timestamps referring to the remaining cooldown time until the user can give out reputation from now | x        |
 
-## Settings object
+## Reputation settings object
 
 >Json representation of settings object
 
