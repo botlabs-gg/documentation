@@ -429,12 +429,12 @@ Allows you to update your settings, none of the fields are required.
 ### Request fields
 
 
-| name                         | type    | description                                                      | default       |
-|------------------------------|---------|------------------------------------------------------------------|---------------|
-| reputationPerDay             | integer | Number of reputations a user may give out per reputationCooldown | 2             |
-| maximumReputation            | integer | The maximum reputation a user may receive                        | 0 (disabled)  |
-| maximumReputationReceivedDay | integer | The maximum reputation a user may receive per day                | 0 (disabled)  |
-| reputationCooldown           | integer | Cooldown per reputation, this is set to time in seconds          | 86400 (1 day) |
+| name                         | type    | description                                                              | default       |
+|------------------------------|---------|--------------------------------------------------------------------------|---------------|
+| reputationPerDay             | integer | Number of reputations a user may give out per reputationCooldown         | 2             |
+| maximumReputation            | integer | The maximum reputation a user may receive                                | 0 (disabled)  |
+| maximumReputationReceivedDay | integer | The maximum reputation a user may receive per day                        | 0 (disabled)  |
+| reputationCooldown           | integer | Cooldown per reputation, this is set to time in seconds (must be >= 300) | 86400 (1 day) |
 
 
 ### Response fields
