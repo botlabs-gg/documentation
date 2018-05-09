@@ -14,7 +14,7 @@ Codename: `korra`
 |-----------------|-----------------------------|
 | generate_simple | Used for simple generations |
 
-### Parameters
+### Query parameters
 
 | Parameter name | Type               | description                                                       | default | required |
 |----------------|--------------------|-------------------------------------------------------------------|---------|----------|
@@ -46,7 +46,7 @@ Codename: `korra`
 |-----------------|-----------------------------|
 | generate_simple | Used for simple generations |
 
-### Parameters
+### Query parameters
 
 | Parameter name | Type   | description                                                                          | default              | required |
 |----------------|--------|--------------------------------------------------------------------------------------|----------------------|----------|
@@ -134,7 +134,7 @@ Codename: `korra`
 |------------------|------------------------------|
 | generate_waifu_insult | Used for generating waifuinsults |
 
-### Parameters
+### Payload
 
 | Name   | Type   | description                                                                                  | default | required |
 |--------|--------|----------------------------------------------------------------------------------------------|---------|----------|
@@ -166,7 +166,7 @@ Codename: `korra`
 |------------------|------------------------------|
 | generate_love_ship | Used for generating love ships |
 
-### Parameters
+### Payload
 
 | Name   | Type   | description                                                                                  | default | required |
 |--------|--------|----------------------------------------------------------------------------------------------|---------|----------|
