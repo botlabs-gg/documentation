@@ -49,7 +49,7 @@ Timestamps are always in `UTC`
    "reputationPerDay":2,
    "maximumReputation":0,
    "maximumReputationReceivedDay":0,
-   "reputationCooldown":"86400"
+   "reputationCooldown":86400
 }
 ```
 
