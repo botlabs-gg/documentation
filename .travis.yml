@@ -5,7 +5,7 @@ rvm:
 install:
 - bundle install
 script:
-- bundler exec middleman build --clean
+- bundle exec middleman build --clean
 deploy:
 - provider: s3
   access_key_id: $aws_access_key_id
