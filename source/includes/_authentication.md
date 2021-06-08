@@ -1,9 +1,7 @@
 # Authentication
 
 <aside class="notice">
-<b>To get access to our API, write an email to 
-<a target="_blank" href="mailto:devs@weeb.sh">devs@weeb.sh</a>,
- which contains at least the following information: the name of your bot, it's guildcount, website (if any) and a link to a botlist site where the guildcount is visible</b>
+<b>To get access to our API, please <a target="_blank" href='https://forms.gle/utj3AhLi3sxMHYih6' target='_blank'>Sign Up here</a>. You'll get a reply from us by mail.</b>
 </aside>
 
 
