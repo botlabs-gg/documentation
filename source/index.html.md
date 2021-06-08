@@ -6,7 +6,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
 
 toc_footers:
   - <a target="_blank" href='https://weeb.sh'>Main Website</a>
-  - <a target="_blank" href='mailto:devs@weeb.sh'>Sign Up for an API Key</a>
+  - <a target="_blank" href='https://forms.gle/utj3AhLi3sxMHYih6' target='_blank'>Sign Up for an API Key</a>
   - <a target="_blank" href='https://github.com/weeb-services/documentation'>Contribute to this documentation</a>
   - <a target="_blank" href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
