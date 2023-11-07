@@ -1,7 +1,7 @@
 # Authentication
 
 <aside class="notice">
-<b>To get access to our API, please <a target="_blank" href='https://forms.gle/utj3AhLi3sxMHYih6' target='_blank'>Sign Up here</a>. You'll get a reply from us by mail.</b>
+<b>To get access to our API, please <a target="_blank" href='https://forms.gle/Lqnsvk5dJyAoWGRe6' target='_blank'>Sign Up here</a>. You'll get a reply from us by mail.</b>
 </aside>
 
 
