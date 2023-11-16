@@ -1,34 +1,2416 @@
----
-title: Weeb.sh API Documentation
 
-language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Weeb.sh API Documentation</title>
+  <meta property="og:title" content="Weeb.sh API Documentation"/>
+  <meta property="og:description" content="Weeb.sh is a service for bot developers that wants to simplify the development and continued hosting of difficult features"/>
+  <meta property="og:url" content="https://docs.weeb.sh" />
+  <meta property="og:image" content="https://docs.weeb.sh/images/logo.png" />
+  <link rel="apple-touch-icon" sizes="57x57" href="icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+  <link rel="manifest" href="icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#000000">
+  <style>
+    .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+  </style>
+  <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+  <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+    <script src="javascripts/all.js"></script>
+</head>
 
-toc_footers:
-  - <a target="_blank" href='https://weeb.sh'>Main Website</a>
-  - <a target="_blank" href='https://forms.gle/utj3AhLi3sxMHYih6' target='_blank'>Sign Up for an API Key</a>
-  - <a target="_blank" href='https://github.com/weeb-services/documentation'>Contribute to this documentation</a>
-  - <a target="_blank" href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
-
-includes:
-  - authentication
-  - endpoints
-  - permissions
-  - toph
-  - korra
-  - shimakaze
-  - tama
-  - errors
-
-search: true
----
-
-# Introduction
-
-Weeb.sh is a service for bot developers
+<body class="index" data-languages="[&quot;shell&quot;]">
+<a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+</a>
+<div class="toc-wrapper">
+  <img src="images/logo.png" class="logo" alt="Logo" />
+    <div class="lang-selector">
+          <a href="#" data-language-name="shell">shell</a>
+    </div>
+    <div class="search">
+      <input type="text" class="search" id="input-search" placeholder="Search">
+    </div>
+    <ul class="search-results"></ul>
+  <div id="toc" class="toc-list-h1">
+      <li>
+        <a href="#introduction" class="toc-h1 toc-link" data-title="introduction">Introduction</a>
+      </li>
+      <li>
+        <a href="#authentication" class="toc-h1 toc-link" data-title="authentication">Authentication</a>
+          <ul class="toc-list-h2">
+              <li>
+                <a href="#bearer-token" class="toc-h2 toc-link" data-title="bearer-token">Bearer token</a>
+              </li>
+              <li>
+                <a href="#wolke-token" class="toc-h2 toc-link" data-title="wolke-token">Wolke token</a>
+              </li>
+          </ul>
+      </li>
+      <li>
+        <a href="#endpoints" class="toc-h1 toc-link" data-title="endpoints">Endpoints</a>
+          <ul class="toc-list-h2">
+              <li>
+                <a href="#api-endpoints" class="toc-h2 toc-link" data-title="api-endpoints">API endpoints</a>
+              </li>
+              <li>
+                <a href="#cdn-endpoints" class="toc-h2 toc-link" data-title="cdn-endpoints">CDN endpoints</a>
+              </li>
+          </ul>
+      </li>
+      <li>
+        <a href="#permissions" class="toc-h1 toc-link" data-title="permissions">Permissions</a>
+      </li>
+      <li>
+        <a href="#image-api-toph" class="toc-h1 toc-link" data-title="image-api-toph">Image API (toph)</a>
+          <ul class="toc-list-h2">
+              <li>
+                <a href="#image-object" class="toc-h2 toc-link" data-title="image-object">Image Object</a>
+              </li>
+              <li>
+                <a href="#upload-image" class="toc-h2 toc-link" data-title="upload-image">Upload Image</a>
+              </li>
+              <li>
+                <a href="#image-types" class="toc-h2 toc-link" data-title="image-types">Image types</a>
+              </li>
+              <li>
+                <a href="#image-tags" class="toc-h2 toc-link" data-title="image-tags">Image tags</a>
+              </li>
+              <li>
+                <a href="#random-image" class="toc-h2 toc-link" data-title="random-image">Random image</a>
+              </li>
+              <li>
+                <a href="#image-info" class="toc-h2 toc-link" data-title="image-info">Image info</a>
+              </li>
+              <li>
+                <a href="#add-tags-to-image" class="toc-h2 toc-link" data-title="add-tags-to-image">Add tags to image</a>
+              </li>
+              <li>
+                <a href="#remove-tags-from-image" class="toc-h2 toc-link" data-title="remove-tags-from-image">Remove tags from image</a>
+              </li>
+              <li>
+                <a href="#delete-image" class="toc-h2 toc-link" data-title="delete-image">Delete image</a>
+              </li>
+              <li>
+                <a href="#list-images" class="toc-h2 toc-link" data-title="list-images">List images</a>
+              </li>
+              <li>
+                <a href="#list-images-user" class="toc-h2 toc-link" data-title="list-images-user">List images user</a>
+              </li>
+          </ul>
+      </li>
+      <li>
+        <a href="#image-generation-api-korra" class="toc-h1 toc-link" data-title="image-generation-api-korra">Image generation API (korra)</a>
+          <ul class="toc-list-h2">
+              <li>
+                <a href="#generate-simple" class="toc-h2 toc-link" data-title="generate-simple">Generate Simple</a>
+              </li>
+              <li>
+                <a href="#discord-status" class="toc-h2 toc-link" data-title="discord-status">Discord Status</a>
+              </li>
+              <li>
+                <a href="#license-generation" class="toc-h2 toc-link" data-title="license-generation">License generation</a>
+              </li>
+              <li>
+                <a href="#generate-waifuinsult" class="toc-h2 toc-link" data-title="generate-waifuinsult">Generate Waifuinsult</a>
+              </li>
+              <li>
+                <a href="#generate-loveship" class="toc-h2 toc-link" data-title="generate-loveship">Generate Loveship</a>
+              </li>
+          </ul>
+      </li>
+      <li>
+        <a href="#reputation-api-shimakaze" class="toc-h1 toc-link" data-title="reputation-api-shimakaze">Reputation API (shimakaze)</a>
+          <ul class="toc-list-h2">
+              <li>
+                <a href="#user-object" class="toc-h2 toc-link" data-title="user-object">User object</a>
+              </li>
+              <li>
+                <a href="#reputation-settings-object" class="toc-h2 toc-link" data-title="reputation-settings-object">Reputation settings object</a>
+              </li>
+              <li>
+                <a href="#get-reputation-of-user" class="toc-h2 toc-link" data-title="get-reputation-of-user">Get reputation of user</a>
+              </li>
+              <li>
+                <a href="#give-reputation-to-user" class="toc-h2 toc-link" data-title="give-reputation-to-user">Give reputation to user</a>
+              </li>
+              <li>
+                <a href="#reset-user-reputation" class="toc-h2 toc-link" data-title="reset-user-reputation">Reset user reputation</a>
+              </li>
+              <li>
+                <a href="#increase-user-reputation" class="toc-h2 toc-link" data-title="increase-user-reputation">Increase user reputation</a>
+              </li>
+              <li>
+                <a href="#decrease-user-reputation" class="toc-h2 toc-link" data-title="decrease-user-reputation">Decrease user reputation</a>
+              </li>
+              <li>
+                <a href="#get-settings" class="toc-h2 toc-link" data-title="get-settings">Get settings</a>
+              </li>
+              <li>
+                <a href="#set-settings" class="toc-h2 toc-link" data-title="set-settings">Set settings</a>
+              </li>
+          </ul>
+      </li>
+      <li>
+        <a href="#settings-api-tama" class="toc-h1 toc-link" data-title="settings-api-tama">Settings API (tama)</a>
+          <ul class="toc-list-h2">
+              <li>
+                <a href="#settings-object" class="toc-h2 toc-link" data-title="settings-object">Settings object</a>
+              </li>
+              <li>
+                <a href="#sub-settings-object" class="toc-h2 toc-link" data-title="sub-settings-object">Sub-Settings object</a>
+              </li>
+              <li>
+                <a href="#get-setting" class="toc-h2 toc-link" data-title="get-setting">Get setting</a>
+              </li>
+              <li>
+                <a href="#create-update-setting" class="toc-h2 toc-link" data-title="create-update-setting">Create/Update setting</a>
+              </li>
+              <li>
+                <a href="#delete-setting" class="toc-h2 toc-link" data-title="delete-setting">Delete setting</a>
+              </li>
+              <li>
+                <a href="#list-sub-settings" class="toc-h2 toc-link" data-title="list-sub-settings">List sub-settings</a>
+              </li>
+              <li>
+                <a href="#get-sub-setting" class="toc-h2 toc-link" data-title="get-sub-setting">Get sub-setting</a>
+              </li>
+              <li>
+                <a href="#create-update-sub-setting" class="toc-h2 toc-link" data-title="create-update-sub-setting">Create/Update sub-setting</a>
+              </li>
+              <li>
+                <a href="#delete-sub-setting" class="toc-h2 toc-link" data-title="delete-sub-setting">Delete sub-setting</a>
+              </li>
+          </ul>
+      </li>
+      <li>
+        <a href="#errors" class="toc-h1 toc-link" data-title="errors">Errors</a>
+      </li>
+  </div>
+    <ul class="toc-footer">
+        <li><a target="_blank" href='https://weeb.sh'>Main Website</a></li>
+        <li><a target="_blank" href='https://forms.gle/utj3AhLi3sxMHYih6' target='_blank'>Sign Up for an API Key</a></li>
+        <li><a target="_blank" href='https://github.com/weeb-services/documentation'>Contribute to this documentation</a></li>
+        <li><a target="_blank" href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+    </ul>
+</div>
+<div class="page-wrapper">
+  <div class="dark-box"></div>
+  <div class="content">
+    <h1 id='introduction'>Introduction</h1>
+<p>Weeb.sh is a service for bot developers
 that wants to simplify the development and continued hosting of difficult features
-like reaction images, image generation, bot settings and user reputation (gamification)
+like reaction images, image generation, bot settings and user reputation (gamification)</p>
 
-To accomplish that,
+<p>To accomplish that,
 weeb.sh provides a number of APIs
-which allow the bot developers to easily implement those features into their bots.
+which allow the bot developers to easily implement those features into their bots.</p>
+<h1 id='authentication'>Authentication</h1>
+<aside class="notice">
+<b>To get access to our API, please <a target="_blank" href='https://forms.gle/utj3AhLi3sxMHYih6' target='_blank'>Sign Up here</a>. You'll get a reply from us by mail.</b>
+</aside>
+
+<p>When calling our API, make sure to add an HTTP-Header with the name of <code>Authorization</code> and a value of <code>TokenType TOKEN</code></p>
+
+<p>Weeb.sh requires you to authenticate on most api calls, depending on when you signed up, you may have gotten one of the following tokens:</p>
+
+<p>Bearer token: <code>eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTUxNjIzOTAyMn0.TCYt5XsITJX1CxPCT8yAV-TVkIEq_PbChOMqsLfRoPsnsgw5WEuts01mq-pQy7UJiN5mgRxD-WUcX16dUEMGlv50aqzpqh4Qktb3rk-BuQy72IFLOqV0G_zS245-kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM</code></p>
+
+<p>Wolke token: <code>SDE1STMzd0wtOjBlNjYyYTRmZjg2YWE1OGQwM2FlOTA1YzBhM2FlZGQ1NzZhZjVmMTk2NzE2YWUxNWVjZTVjZWY5</code></p>
+
+<aside class="notice">
+All new users get a wolke token. The listed api tokens are not working and just serve as examples, you have to replace them with your personal token.
+</aside>
+<h2 id='bearer-token'>Bearer token</h2><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
+curl <span class="s2">"api_endpoint_here"</span>
+  -H <span class="s2">"Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTUxNjIzOTAyMn0.TCYt5XsITJX1CxPCT8yAV-TVkIEq_PbChOMqsLfRoPsnsgw5WEuts01mq-pQy7UJiN5mgRxD-WUcX16dUEMGlv50aqzpqh4Qktb3rk-BuQy72IFLOqV0G_zS245-kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"</span>
+</code></pre>
+<p>For a bearer token the value of the <code>Authorization</code> header would look like this:</p>
+
+<p><code>Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTUxNjIzOTAyMn0.TCYt5XsITJX1CxPCT8yAV-TVkIEq_PbChOMqsLfRoPsnsgw5WEuts01mq-pQy7UJiN5mgRxD-WUcX16dUEMGlv50aqzpqh4Qktb3rk-BuQy72IFLOqV0G_zS245-kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM</code></p>
+<h2 id='wolke-token'>Wolke token</h2><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
+curl <span class="s2">"api_endpoint_here"</span>
+  -H <span class="s2">"Authorization: Wolke SDE1STMzd0wtOjBlNjYyYTRmZjg2YWE1OGQwM2FlOTA1YzBhM2FlZGQ1NzZhZjVmMTk2NzE2YWUxNWVjZTVjZWY5"</span>
+</code></pre>
+<p>For a wolke token the value of the <code>Authorization</code> header would look like this:</p>
+
+<p><code>Wolke SDE1STMzd0wtOjBlNjYyYTRmZjg2YWE1OGQwM2FlOTA1YzBhM2FlZGQ1NzZhZjVmMTk2NzE2YWUxNWVjZTVjZWY5</code></p>
+<h1 id='endpoints'>Endpoints</h1>
+<p>Weeb.sh provides APIs on multiple base endpoints(environments), generally users are unlocked for the staging and production endpoint of an api, but in special cases users may only be unlocked for a single environment/endpoint.</p>
+<h2 id='api-endpoints'>API endpoints</h2>
+<table><thead>
+<tr>
+<th>Environment</th>
+<th>URL</th>
+<th>Purpose</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>development</td>
+<td>http://localhost:API_PORT</td>
+<td>local development</td>
+</tr>
+<tr>
+<td>staging</td>
+<td>https://staging.weeb.sh/images/</td>
+<td>testing of new features</td>
+</tr>
+<tr>
+<td>production</td>
+<td>https://api.weeb.sh/images/</td>
+<td>production usage</td>
+</tr>
+</tbody></table>
+<h2 id='cdn-endpoints'>CDN endpoints</h2>
+<p>To serve our assets (images, data, etc.) we also operate the following cdn endpoints:</p>
+
+<table><thead>
+<tr>
+<th>Environment</th>
+<th>URL</th>
+<th>Purpose</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>all</td>
+<td>https://cdn.weeb.sh</td>
+<td>serve assets created by services and users</td>
+</tr>
+</tbody></table>
+<h1 id='permissions'>Permissions</h1>
+<blockquote>
+<p>If a user is missing permissions for an endpoint, they will be seeing a message similar to the following:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">403</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"missing scope korra-production:generate_simple"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Weeb.sh APIs use an internal permission model to make sure that users are only allowed to use the endpoints they are whitelisted for.
+Those permissions are stored using permission keys, which consist of the api-codename, the environment and optionally a key to specify the endpoint/endpoints that may be used:
+<code>apicodename-environment:key</code></p>
+
+<p>Here are some examples:</p>
+
+<p><code>toph-production:image_data</code> -&gt; grants a user <code>image_data</code> on <code>toph</code> (images) in the production environment</p>
+
+<p><code>toph-staging</code> -&gt; grants <strong>all</strong> permissions on <code>toph</code> (images) in the staging environment</p>
+<h1 id='image-api-toph'>Image API (toph)</h1>
+<p>This api provides images (reactions, characters, animals) for various categories.</p>
+
+<p>Codename: <code>toph</code></p>
+<h4 id='default-permissions'>Default permissions:</h4>
+<table><thead>
+<tr>
+<th>Permission name</th>
+<th>description</th>
+<th>environment</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>image_data</td>
+<td>Allows you to access basic image data</td>
+<td>staging</td>
+</tr>
+<tr>
+<td>image_data</td>
+<td>Allows you to access basic image data</td>
+<td>production</td>
+</tr>
+</tbody></table>
+<h4 id='image-api-cdn-endpoints'>Image API CDN Endpoints:</h4>
+<p>The image API uses the weeb.sh CDN to provide it&#39;s reaction images,
+depending on the environment of the image API you are using,
+the base url of the returned image may be one of the following:</p>
+
+<table><thead>
+<tr>
+<th>endpoint</th>
+<th>environment</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>https://cdn.weeb.sh/images</td>
+<td>production</td>
+<td>The production CDN endpoint for toph</td>
+</tr>
+<tr>
+<td>https://cdn.weeb.sh/staging-images</td>
+<td>staging</td>
+<td>The staging CDN endpoint for toph</td>
+</tr>
+<tr>
+<td>https://cdn.weeb.sh/dev-images</td>
+<td>development</td>
+<td>The development CDN endpoint for toph</td>
+</tr>
+</tbody></table>
+<h2 id='image-object'>Image Object</h2>
+<blockquote>
+<p>Json representation of image object</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BJZfMrXwb"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"awoo"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"baseType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"awoo"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"nsfw"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"fileType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gif"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mimeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/gif"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.weeb.sh/images/BJZfMrXwb.gif"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"hidden"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"account"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HyxjFGfPb"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>unique id of the image</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>type/category of the image, this is what&#39;s used to show the list of types in /types</td>
+</tr>
+<tr>
+<td>baseType</td>
+<td>string</td>
+<td>^</td>
+</tr>
+<tr>
+<td>nsfw</td>
+<td>boolean</td>
+<td>whether this image has content that could be considered NSFW (not safe for work)</td>
+</tr>
+<tr>
+<td>fileType</td>
+<td>string</td>
+<td>file extension of the image</td>
+</tr>
+<tr>
+<td>mimeType</td>
+<td>string</td>
+<td>mime type of the image</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>array of tag objects</td>
+<td>tags associated with this image</td>
+</tr>
+<tr>
+<td>url</td>
+<td>string</td>
+<td>full url used to load the image, you can safely hotlink the image to your site/service</td>
+</tr>
+<tr>
+<td>hidden</td>
+<td>boolean</td>
+<td>whether this image can only be seen by the uploader</td>
+</tr>
+<tr>
+<td>?source</td>
+<td>string</td>
+<td>source url of the image</td>
+</tr>
+<tr>
+<td>account</td>
+<td>string</td>
+<td>id of the account that uploaded that image</td>
+</tr>
+</tbody></table>
+<h2 id='upload-image'>Upload Image</h2>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="s2">"status"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
+</span><span class="s2">"file"</span><span class="p">:{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BJZfMrXwb"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"awoo"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"baseType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"awoo"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"nsfw"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"fileType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gif"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mimeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/gif"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.weeb.sh/images/BJZfMrXwb.gif"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"hidden"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"account"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HyxjFGfPb"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='endpoint-images-upload'>Endpoint <code>/images/upload</code></h3><h3 id='methods-post'>Methods <code>POST</code></h3><h3 id='required-permissions'>Required Permissions</h3>
+<table><thead>
+<tr>
+<th>Permission name</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>upload_image</td>
+<td>allows you to upload public and private images</td>
+</tr>
+<tr>
+<td>upload_image_private</td>
+<td>allows you to upload private images</td>
+</tr>
+</tbody></table>
+<h3 id='content-types'>Content Types</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>application/json</td>
+<td>When uploading images via url</td>
+</tr>
+<tr>
+<td>multipart/form-data</td>
+<td>When uploading images from disk</td>
+</tr>
+</tbody></table>
+<h3 id='payload'>Payload</h3>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>file</td>
+<td>File Buffer</td>
+<td>Buffer containing the image data of the image you want to upload (takes priority over url argument)</td>
+</tr>
+<tr>
+<td>url</td>
+<td>string</td>
+<td>Url pointing directly at the image you want to upload, you may only use file or url</td>
+</tr>
+<tr>
+<td>baseType</td>
+<td>string</td>
+<td>type of the image, this can be viewed as the category of an image</td>
+</tr>
+<tr>
+<td>hidden</td>
+<td>boolean</td>
+<td>If the uploaded image should be hidden</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>string</td>
+<td>comma seperated list of tags that should be added to the image, they inherit the hidden property of the image</td>
+</tr>
+<tr>
+<td>nsfw</td>
+<td>boolean</td>
+<td>whether this image has content that could be considered NSFW (not safe for work)</td>
+</tr>
+<tr>
+<td>source</td>
+<td>string</td>
+<td>Url pointing to the original source of the image</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p>You will get back a json response with a regular image object wrapped with a file key</p>
+<h2 id='image-types'>Image types</h2>
+<blockquote>
+<p>Example response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"types"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"awoo"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"bang"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"blush"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"clagwimoth"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"preview"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.weeb.sh/images/BJZfMrXwb.gif"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BJZfMrXwb"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"fileType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gif"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"baseType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"awoo"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"awoo"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.weeb.sh/images/rJmPWI7wW.gif"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rJmPWI7wW"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"fileType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gif"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"baseType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bang"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bang"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.weeb.sh/images/HklJGIXPW.gif"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HklJGIXPW"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"fileType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gif"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"baseType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"blush"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"blush"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.weeb.sh/images/HyNYMIXDb.png"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HyNYMIXDb"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"fileType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"png"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"baseType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clagwimoth"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clagwimoth"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='endpoint-images-types'>endpoint <code>/images/types</code></h3><h3 id='methods-get'>methods <code>GET</code></h3><h3 id='required-permissions-2'>required permissions</h3>
+<table><thead>
+<tr>
+<th>Permission name</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>image_data</td>
+<td>Allows you to access basic image data</td>
+</tr>
+</tbody></table>
+<h3 id='query-parameters'>query parameters</h3>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+<th>default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>hidden</td>
+<td>boolean</td>
+<td>if true, you only get back hidden images you uploaded</td>
+<td>returns types from public images and hidden images which you uploaded</td>
+</tr>
+<tr>
+<td>nsfw</td>
+<td>string</td>
+<td>When false, no types from nsfw images will be returned, true returns types from nsfw and non-nsfw images, only returns only types from nsfw images</td>
+<td>false</td>
+</tr>
+<tr>
+<td>preview</td>
+<td>boolean</td>
+<td>Get a preview image for each type</td>
+<td>false</td>
+</tr>
+</tbody></table>
+
+<p>You will get back a list of type strings wrapped in an object similar to this:
+Preview will contain a list of partial image objects which you can find below.
+The preview image for a type does not change as long as the image itself isn&#39;t deleted.</p>
+<h2 id='image-tags'>Image tags</h2>
+<blockquote>
+<p>Example response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"nuzzle"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cuddle"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"momiji inubashiri"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"wan"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"astolfo"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"facedesk"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"everyone"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='endpoint-images-tags'>endpoint  <code>/images/tags</code></h3><h3 id='method-get'>method  <code>GET</code></h3><h3 id='required-permissions-3'>required permissions</h3>
+<table><thead>
+<tr>
+<th>Permission name</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>image_data</td>
+<td>Allows you to access basic image data</td>
+</tr>
+</tbody></table>
+<h3 id='query-parameters-2'>query parameters</h3>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+<th>default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>hidden</td>
+<td>boolean</td>
+<td>if true, you only get back hidden tags you added</td>
+<td>returns public tags and private ones you added</td>
+</tr>
+<tr>
+<td>nsfw</td>
+<td>string</td>
+<td>When false, no tags coming from nsfw images will be returned, true returns tags from nsfw and non-nsfw images, only returns only tags from nsfw images</td>
+<td>false</td>
+</tr>
+</tbody></table>
+
+<p>returns a list of tags in string format wrapped with a tags key</p>
+<h2 id='random-image'>Random image</h2>
+<blockquote>
+<p>Example response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BJZfMrXwb"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"awoo"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"baseType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"awoo"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"nsfw"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"fileType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gif"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mimeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/gif"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.weeb.sh/images/BJZfMrXwb.gif"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"hidden"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"account"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HyxjFGfPb"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='endpoint-images-random'>endpoint <code>/images/random</code></h3><h3 id='method-get-2'>method <code>GET</code></h3><h3 id='required-permissions-4'>required permissions</h3>
+<table><thead>
+<tr>
+<th>Permission name</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>image_data</td>
+<td>Allows you to access basic image data</td>
+</tr>
+</tbody></table>
+<h3 id='query-parameters-3'>query parameters</h3>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+<th>default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>type of the image you want to get Either Type or Tags is mandatory, but you can combine them</td>
+<td>-</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>string</td>
+<td>comma seperated list of the tags the image should have</td>
+<td>-</td>
+</tr>
+<tr>
+<td>nsfw</td>
+<td>string</td>
+<td>When false, no types from nsfw images will be returned, true returns types from nsfw and non-nsfw images, only returns only types from nsfw images</td>
+<td>false</td>
+</tr>
+<tr>
+<td>hidden</td>
+<td>boolean</td>
+<td>When false you only get public images, true will only give you hidden images uploaded by yourself</td>
+<td>public images and hidden images you uploaded</td>
+</tr>
+<tr>
+<td>filetype</td>
+<td>string</td>
+<td>Filetype of the image, may either be jpg/jpeg, png or gif. jpeg and jpg are treated like being the same.</td>
+<td>-</td>
+</tr>
+</tbody></table>
+
+<p>returns a random image</p>
+<h2 id='image-info'>Image info</h2>
+<blockquote>
+<p>Example response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BJZfMrXwb"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"awoo"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"baseType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"awoo"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"nsfw"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"fileType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gif"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mimeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/gif"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.weeb.sh/images/BJZfMrXwb.gif"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"hidden"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"account"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HyxjFGfPb"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='endpoint-info-image_id'>endpoint <code>/info/:image_id</code></h3><h3 id='method-get-3'>method <code>GET</code></h3><h3 id='required-permissions-5'>required permissions</h3>
+<table><thead>
+<tr>
+<th>Permission name</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>image_data</td>
+<td>Allows you to access basic image data</td>
+</tr>
+</tbody></table>
+
+<p>Gives you the image object for an id</p>
+<h2 id='add-tags-to-image'>Add tags to image</h2><h3 id='endpoint-info-image_id-tags'>endpoint <code>/info/:image_id/tags</code></h3><h3 id='method-post'>method <code>POST</code></h3>
+<table><thead>
+<tr>
+<th>Permission name</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>image_tags</td>
+<td>Add tags to an image</td>
+</tr>
+</tbody></table>
+<h2 id='remove-tags-from-image'>Remove tags from image</h2><h3 id='endpoint-info-image_id-tags-2'>endpoint <code>/info/:image_id/tags</code></h3><h3 id='method-delete'>method <code>DELETE</code></h3><h3 id='required-permissions-6'>required permissions</h3>
+<table><thead>
+<tr>
+<th>Permission name</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>image_tags_delete</td>
+<td>Delete tags from an image</td>
+</tr>
+</tbody></table>
+<h2 id='delete-image'>Delete image</h2><h3 id='endpoint-info-image_id-2'>endpoint <code>/info/:image_id</code></h3><h3 id='method-delete-2'>method <code>DELETE</code></h3><h3 id='required-permissions-7'>required permissions</h3>
+<table><thead>
+<tr>
+<th>Permission name</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>image_delete</td>
+<td>Delete images from any user</td>
+</tr>
+<tr>
+<td>image_delete_private</td>
+<td>Delete hidden images you uploaded</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+<b>The endpoints down below will likely change in the future.</b>
+</aside>
+<h2 id='list-images'>List images</h2><h4 id='endpoint-list'>endpoint <code>/list</code></h4><h4 id='method-get-4'>method <code>GET</code></h4><h3 id='required-permissions-8'>required permissions</h3>
+<table><thead>
+<tr>
+<th>Permission name</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>image_list_all</td>
+<td>List images from all users</td>
+</tr>
+</tbody></table>
+<h2 id='list-images-user'>List images user</h2><h3 id='endpoint-list-account_id'>endpoint <code>/list/:account_id</code></h3><h3 id='method-get-5'>method <code>GET</code></h3><h3 id='required-permissions-9'>required permissions</h3>
+<table><thead>
+<tr>
+<th>Permission name</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>image_list</td>
+<td>List images you uploaded</td>
+</tr>
+<tr>
+<td>image_list_all</td>
+<td>List images from all users</td>
+</tr>
+</tbody></table>
+<h1 id='image-generation-api-korra'>Image generation API (korra)</h1>
+<p>This api provides generated images (love-ship, waifu insult and more) for various purposes.</p>
+
+<p>Codename: <code>korra</code></p>
+<h2 id='generate-simple'>Generate Simple</h2><h3 id='endpoint-auto-image-generate'>Endpoint <code>/auto-image/generate</code></h3><h3 id='method-get'>Method <code>GET</code></h3><h3 id='needed-permissions'>Needed permissions</h3>
+<table><thead>
+<tr>
+<th>Permission name</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>generate_simple</td>
+<td>Used for simple generations</td>
+</tr>
+</tbody></table>
+<h3 id='query-parameters'>Query parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Type</th>
+<th>description</th>
+<th>default</th>
+<th>required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>String</td>
+<td>type of the generation to create, possible types are listed below</td>
+<td></td>
+<td>x</td>
+</tr>
+<tr>
+<td>face</td>
+<td>String (Hex Color)</td>
+<td>only used with awooo type, defines color of face</td>
+<td>fff0d3</td>
+<td></td>
+</tr>
+<tr>
+<td>hair</td>
+<td>String (Hex Color)</td>
+<td>only used with awooo type, defines color of hair/fur</td>
+<td>cc817c</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='types'>Types</h3><h3 id='awooo'>awooo:</h3>
+<p><img src="https://i.imgur.com/9sJ21z3.png" alt="awoo image" /></p>
+<h3 id='eyes'>eyes:</h3>
+<p><img src="https://i.imgur.com/q9UL3fN.png" alt="eyes image" /></p>
+<h3 id='won'>won:</h3>
+<p><img src="https://i.imgur.com/hdapIsB.png?1" alt="won image" /></p>
+<h2 id='discord-status'>Discord Status</h2><h3 id='endpoint-auto-image-discord-status'>Endpoint <code>/auto-image/discord-status</code></h3><h3 id='method-get-2'>Method <code>GET</code></h3><h3 id='needed-permissions-2'>Needed permissions</h3>
+<table><thead>
+<tr>
+<th>Permission name</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>generate_simple</td>
+<td>Used for simple generations</td>
+</tr>
+</tbody></table>
+<h3 id='query-parameters-2'>Query parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter name</th>
+<th>Type</th>
+<th>description</th>
+<th>default</th>
+<th>required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>discord status of the mock, has to be one of the states listed below</td>
+<td>online</td>
+<td></td>
+</tr>
+<tr>
+<td>avatar</td>
+<td>String</td>
+<td>uri encoded http/s url pointing to an avatar, has to have proper headers and be a direct link to an image</td>
+<td>green default avatar</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='example-discord-states'>Example discord states</h3><h3 id='online'>online</h3>
+<p><img src="https://i.imgur.com/jRtqgra.png" alt="awoo online" /></p>
+<h3 id='idle'>idle</h3>
+<p><img src="https://i.imgur.com/3kPwfLG.png" alt="awoo idle" /></p>
+<h3 id='dnd'>dnd</h3>
+<p><img src="https://i.imgur.com/xnypBwF.png" alt="awoo dnd" /></p>
+<h3 id='streaming'>streaming</h3>
+<p><img src="https://i.imgur.com/FH9UQM1.png" alt="awoo streaming" /></p>
+<h3 id='offline'>offline</h3>
+<p><img src="https://i.imgur.com/2AOcxWZ.png" alt="awoo offline" /></p>
+<h2 id='license-generation'>License generation</h2>
+<blockquote>
+<p>Example payload</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"Spook License"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"avatar"</span><span class="p">:</span><span class="s2">"https://imgur.com/zPn0DYT.png"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"badges"</span><span class="p">:[</span><span class="w">
+        </span><span class="s2">"https://imgur.com/zPn0DYT.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"https://imgur.com/zPn0DYT.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"https://imgur.com/zPn0DYT.png"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"widgets"</span><span class="p">:[</span><span class="s2">"1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w"> </span><span class="s2">"3"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='endpoint-auto-image-license'>Endpoint <code>/auto-image/license</code></h3><h3 id='method-post'>Method <code>POST</code></h3><h3 id='needed-permissions-3'>Needed permissions</h3>
+<table><thead>
+<tr>
+<th>Permission name</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>generate_license</td>
+<td>Used for generating licenses</td>
+</tr>
+</tbody></table>
+<h3 id='payload'>Payload</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>description</th>
+<th>default</th>
+<th>required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>title</td>
+<td>String</td>
+<td>Title of the license</td>
+<td></td>
+<td>x</td>
+</tr>
+<tr>
+<td>avatar</td>
+<td>String</td>
+<td>http/s url pointing to an image, has to have proper headers and be a direct link to an image</td>
+<td></td>
+<td>x</td>
+</tr>
+<tr>
+<td>badges</td>
+<td>String[]</td>
+<td>Array of http/s urls pointing to images, that should be used in the badges, same conditions as for avatar apply</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>widgets</td>
+<td>String[]</td>
+<td>Array of strings for filling the three boxes with text content</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='example-result'>Example result</h3>
+<p><img src="https://i.imgur.com/7ZZxrWf.png" alt="example license" /></p>
+<h2 id='generate-waifuinsult'>Generate Waifuinsult</h2>
+<blockquote>
+<p>Example payload</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"avatar"</span><span class="p">:</span><span class="s2">"https://cdn.discordapp.com/avatars/121919449996460033/d52f23a57dbe54bb39b77d96d61a5a92.webp"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='endpoint-auto-image-waifu-insult'>Endpoint <code>/auto-image/waifu-insult</code></h3><h3 id='method-post-2'>Method <code>POST</code></h3><h3 id='needed-permissions-4'>Needed permissions</h3>
+<table><thead>
+<tr>
+<th>Permission name</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>generate_waifu_insult</td>
+<td>Used for generating waifuinsults</td>
+</tr>
+</tbody></table>
+<h3 id='payload-2'>Payload</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>description</th>
+<th>default</th>
+<th>required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>avatar</td>
+<td>String</td>
+<td>http/s url pointing to an image, has to have proper headers and be a direct link to an image</td>
+<td></td>
+<td>x</td>
+</tr>
+</tbody></table>
+<h3 id='example-result-2'>Example result</h3>
+<p><img src="https://i.imgur.com/R5VEQtS.png" alt="Waifu Insult demo" /></p>
+<h2 id='generate-loveship'>Generate Loveship</h2>
+<blockquote>
+<p>Example payload</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"targetOne"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.discordapp.com/avatars/185476724627210241/615ee9f0e97aab7fa0725165531df3a7.webp?size=256"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"targetTwo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.discordapp.com/avatars/388799526103941121/b5acd5dd89aa8ff7c3600f2b7edaff57.webp?size=256"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='endpoint-auto-image-love-ship'>Endpoint <code>/auto-image/love-ship</code></h3><h3 id='method-post-3'>Method <code>POST</code></h3><h3 id='needed-permissions-5'>Needed permissions</h3>
+<table><thead>
+<tr>
+<th>Permission name</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>generate_love_ship</td>
+<td>Used for generating love ships</td>
+</tr>
+</tbody></table>
+<h3 id='payload-3'>Payload</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>description</th>
+<th>default</th>
+<th>required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>targetOne</td>
+<td>String</td>
+<td>http/s url pointing to an image, has to have proper headers and be a direct link to an image, image will be on the left side.</td>
+<td></td>
+<td>x</td>
+</tr>
+<tr>
+<td>targetTwo</td>
+<td>String</td>
+<td>http/s url pointing to an image, has to have proper headers and be a direct link to an image, image will be on the right side.</td>
+<td></td>
+<td>x</td>
+</tr>
+</tbody></table>
+<h3 id='example-result-3'>Example result</h3>
+<p><img src="https://i.imgur.com/7Yw4Ls6.png" alt="Love Ship demo" /></p>
+<h1 id='reputation-api-shimakaze'>Reputation API (shimakaze)</h1>
+<p>This API can be used to assign reputation to a user, while automatically checking for limits such as max reputation a user may give/receive per day as well as the maximum reputation a user may get totally. </p>
+
+<p>You can also customize those limits to fit your needs. The cooldown of per reputation is also customizable!</p>
+
+<p>Codename: <code>shimakaze</code></p>
+
+<p>Timestamps are always in <code>UTC</code></p>
+<h2 id='user-object'>User object</h2>
+<blockquote>
+<p>Json representation of user object</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="s2">"reputation"</span><span class="p">:</span><span class="mi">477</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"cooldown"</span><span class="p">:[</span><span class="w">
+      </span><span class="s2">"2018-03-31T12:05:19.851Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"2018-03-31T12:05:35.008Z"</span><span class="w">
+   </span><span class="p">],</span><span class="w">
+   </span><span class="s2">"givenReputation"</span><span class="p">:[</span><span class="w">
+      </span><span class="s2">"2018-04-16T14:16:26.186Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"2018-04-16T14:16:28.062Z"</span><span class="w">
+   </span><span class="p">],</span><span class="w">
+   </span><span class="s2">"userId"</span><span class="p">:</span><span class="s2">"186221791792857088"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"botId"</span><span class="p">:</span><span class="s2">"388799526103941121"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"accountId"</span><span class="p">:</span><span class="s2">"H1e7U2i8f"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+<th>optional</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>reputation</td>
+<td>integer</td>
+<td>current reputation of user</td>
+<td></td>
+</tr>
+<tr>
+<td>cooldown</td>
+<td>date[]</td>
+<td>Array of timestamps referring to the last time(s) this user has given reputation to another user</td>
+<td></td>
+</tr>
+<tr>
+<td>givenReputation</td>
+<td>date[]</td>
+<td>Array of timestamps referring to the last time(s) this user has received reputation from another user</td>
+<td></td>
+</tr>
+<tr>
+<td>userId</td>
+<td>string</td>
+<td>Id of the user that was passed in the first call to take or give reputation to the user</td>
+<td></td>
+</tr>
+<tr>
+<td>botId</td>
+<td>string</td>
+<td>Id of the bot that was passed in the first call to take or give reputation to the user</td>
+<td></td>
+</tr>
+<tr>
+<td>accountId</td>
+<td>string</td>
+<td>Internal id associated with the token calling the API</td>
+<td></td>
+</tr>
+<tr>
+<td>availableReputations</td>
+<td>integer</td>
+<td>How many reputations the user may give out</td>
+<td>x</td>
+</tr>
+<tr>
+<td>nextAvailableReputations</td>
+<td>integer[]</td>
+<td>Array of timestamps referring to the remaining cooldown time until the user can give out reputation from now</td>
+<td>x</td>
+</tr>
+</tbody></table>
+<h2 id='reputation-settings-object'>Reputation settings object</h2>
+<blockquote>
+<p>Json representation of settings object</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="s2">"reputationPerDay"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"maximumReputation"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"maximumReputationReceivedDay"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"reputationCooldown"</span><span class="p">:</span><span class="mi">86400</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+<th>default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>reputationPerDay</td>
+<td>integer</td>
+<td>Number of reputations a user may give out per reputationCooldown</td>
+<td>2</td>
+</tr>
+<tr>
+<td>maximumReputation</td>
+<td>integer</td>
+<td>The maximum reputation a user may receive</td>
+<td>0 (disabled)</td>
+</tr>
+<tr>
+<td>maximumReputationReceivedDay</td>
+<td>integer</td>
+<td>The maximum reputation a user may receive per day</td>
+<td>0 (disabled)</td>
+</tr>
+<tr>
+<td>reputationCooldown</td>
+<td>integer</td>
+<td>Cooldown per reputation, this is set to time in seconds</td>
+<td>86400 (1 day)</td>
+</tr>
+</tbody></table>
+<h2 id='get-reputation-of-user'>Get reputation of user</h2>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"128392910574977024"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"botId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"388799526103941121"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"H1e7U2i8f"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"givenReputation"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"2018-04-17T15:33:44.778Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"2018-04-17T15:33:48.118Z"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"cooldown"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"2018-04-17T15:33:32.842Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"2018-04-17T15:33:35.415Z"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"reputation"</span><span class="p">:</span><span class="w"> </span><span class="mi">471</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"availableReputations"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"nextAvailableReputations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="mi">85671127</span><span class="p">,</span><span class="w">
+            </span><span class="mi">85673700</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-17T15:45:41.675Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='endpoint-reputation-bot_id-user_id'>Endpoint <code>/reputation/:bot_id/:user_id</code></h3><h3 id='methods-get'>Methods <code>GET</code></h3>
+<p>This endpoint allows you to see the current reputation a user has and when they are able to give out reputation again.</p>
+
+<p>To be able to compute the time from now until the user can give out reputation again, this endpoint provides you with the fields <code>nextAvailableReputations</code> as well as <code>date</code>.</p>
+<h3 id='response-fields'>Response fields</h3>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user</td>
+<td>User</td>
+<td>User object with optional fields</td>
+</tr>
+<tr>
+<td>date</td>
+<td>date</td>
+<td>Current server time in UTC</td>
+</tr>
+<tr>
+<td>status</td>
+<td>integer</td>
+<td>HTTP status code</td>
+</tr>
+</tbody></table>
+<h2 id='give-reputation-to-user'>Give reputation to user</h2>
+<blockquote>
+<p>Request body</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">{</span><span class="s2">"source_user"</span><span class="p">:</span><span class="s2">"y"</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-17T17:03:58.865Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully gave one reputation to the targetUser"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sourceUser"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"reputation"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cooldown"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"2018-04-17T17:03:58.864Z"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"givenReputation"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"2018-04-17T16:17:10.370Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"2018-04-17T16:17:11.758Z"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"y"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"botId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"x"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S1WJTqQhf"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"targetUser"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"reputation"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cooldown"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"2018-04-17T16:29:32.432Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"2018-04-17T16:29:43.303Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"2018-04-17T16:29:44.658Z"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"givenReputation"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"2018-04-17T16:13:34.916Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"2018-04-17T16:15:17.048Z"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"x"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"botId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"x"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S1WJTqQhf"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Error response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">403</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-17T17:18:26.727Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The user used all of his reputations."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"reputation"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cooldown"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"2018-04-17T17:18:24.614Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"2018-04-17T17:18:25.428Z"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"givenReputation"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"2018-04-17T16:17:10.370Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"2018-04-17T16:17:11.758Z"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"y"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"botId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"x"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S1WJTqQhf"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='endpoint-reputation-bot_id-target_user_id'>Endpoint <code>/reputation/:bot_id/:target_user_id</code></h3><h3 id='methods-post'>Methods <code>POST</code></h3>
+<p>This endpoint makes one user (the source user) give one reputation point to the target user.</p>
+
+<p>It also checks <code>cooldown</code>, as well as <code>maximumReputation</code>, <code>maximumReputationReceivedDay</code> and <code>reputationPerDay</code>.</p>
+<h3 id='request-fields'>Request fields</h3>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>source_user</td>
+<td>string</td>
+<td>Id of source_user</td>
+</tr>
+</tbody></table>
+<h3 id='response-fields-2'>Response fields</h3>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>integer</td>
+<td>HTTP status code</td>
+</tr>
+<tr>
+<td>date</td>
+<td>date</td>
+<td>Current server time in UTC</td>
+</tr>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td>Return code, see below for possible errors</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>Informational message</td>
+</tr>
+<tr>
+<td>sourceUser</td>
+<td>User</td>
+<td>User that gave a reputation point</td>
+</tr>
+<tr>
+<td>targetUser</td>
+<td>User</td>
+<td>User that received a reputation point</td>
+</tr>
+</tbody></table>
+<h3 id='error-codes'>Error codes</h3>
+<table><thead>
+<tr>
+<th>code</th>
+<th>HTTP code</th>
+<th>description</th>
+<th>user</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>0</td>
+<td>200</td>
+<td>Successful</td>
+<td>-</td>
+</tr>
+<tr>
+<td>1</td>
+<td>403</td>
+<td>The user used all of his reputations and hit the cooldown</td>
+<td>source_user</td>
+</tr>
+<tr>
+<td>2</td>
+<td>403</td>
+<td>The user received the maximum amount of reputation for today</td>
+<td>target_user</td>
+</tr>
+<tr>
+<td>3</td>
+<td>403</td>
+<td>The user reached the maximum possible amount of reputation</td>
+<td>target_user</td>
+</tr>
+</tbody></table>
+<h2 id='reset-user-reputation'>Reset user reputation</h2>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"reputation"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cooldown"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"givenReputation"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"2018-04-17T16:13:34.916Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"2018-04-17T16:15:17.048Z"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"x"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"botId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"x"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S1WJTqQhf"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Did a user cheat reputation ? Just reset it!</p>
+<h3 id='endpoint-reputation-bot_id-target_user_id-reset'>Endpoint <code>/reputation/:bot_id/:target_user_id/reset</code></h3><h3 id='methods-post-2'>Methods <code>POST</code></h3><h3 id='query-parameters'>Query parameters</h3>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+<th>default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>cooldown</td>
+<td>boolean</td>
+<td>Whether to reset the cooldown field of the user too</td>
+<td>false</td>
+</tr>
+</tbody></table>
+<h3 id='response-fields-3'>Response fields</h3>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user</td>
+<td>User</td>
+<td>User object</td>
+</tr>
+<tr>
+<td>status</td>
+<td>integer</td>
+<td>HTTP status code</td>
+</tr>
+</tbody></table>
+<h2 id='increase-user-reputation'>Increase user reputation</h2>
+<blockquote>
+<p>Request body</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">{</span><span class="s2">"increase"</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"reputation"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cooldown"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"givenReputation"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"2018-04-17T16:13:34.916Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"2018-04-17T16:15:17.048Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"2018-04-17T16:30:27.825Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"2018-04-17T16:30:30.833Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"2018-04-17T16:30:31.401Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"2018-04-17T17:03:58.861Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"2018-04-17T17:18:24.613Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"2018-04-17T17:18:25.427Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"2018-04-17T17:18:26.111Z"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"x"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"botId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"x"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S1WJTqQhf"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='endpoint-reputation-bot_id-target_user_id-increase'>Endpoint <code>/reputation/:bot_id/:target_user_id/increase</code></h3><h3 id='methods-post-3'>Methods <code>POST</code></h3>
+<p>Increases the reputation of the user, useful for automated systems, rewarding a user for voting or for assigning a bought reputation point.</p>
+<h3 id='request-fields-2'>Request fields</h3>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>increase</td>
+<td>integer</td>
+<td>Increases the reputation of the user by the passed integer</td>
+</tr>
+</tbody></table>
+<h3 id='response-fields-4'>Response fields</h3>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user</td>
+<td>User</td>
+<td>User object</td>
+</tr>
+<tr>
+<td>status</td>
+<td>integer</td>
+<td>HTTP status code</td>
+</tr>
+</tbody></table>
+<h2 id='decrease-user-reputation'>Decrease user reputation</h2>
+<blockquote>
+<p>Request body</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">{</span><span class="s2">"decrease"</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"reputation"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cooldown"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"givenReputation"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"2018-04-17T16:13:34.916Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"2018-04-17T16:15:17.048Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"2018-04-17T16:30:27.825Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"2018-04-17T16:30:30.833Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"2018-04-17T16:30:31.401Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"2018-04-17T17:03:58.861Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"2018-04-17T17:18:24.613Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"2018-04-17T17:18:25.427Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"2018-04-17T17:18:26.111Z"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"x"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"botId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"x"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S1WJTqQhf"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='endpoint-reputation-bot_id-target_user_id-decrease'>Endpoint <code>/reputation/:bot_id/:target_user_id/decrease</code></h3><h3 id='methods-post-4'>Methods <code>POST</code></h3>
+<p>Decreases the reputation of the user, useful for automated systems, allowing users to &quot;steal&quot; reputation or similar use-cases.</p>
+<h3 id='request-fields-3'>Request fields</h3>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>decrease</td>
+<td>integer</td>
+<td>Decreases the reputation of the user by the passed integer</td>
+</tr>
+</tbody></table>
+<h3 id='response-fields-5'>Response fields</h3>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user</td>
+<td>User</td>
+<td>User object</td>
+</tr>
+<tr>
+<td>status</td>
+<td>integer</td>
+<td>HTTP status code</td>
+</tr>
+</tbody></table>
+<h2 id='get-settings'>Get settings</h2>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"reputationPerDay"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"maximumReputation"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"maximumReputationReceivedDay"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"reputationCooldown"</span><span class="p">:</span><span class="w"> </span><span class="mi">86400</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S1WJTqQhf"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='endpoint-reputation-settings'>Endpoint <code>/reputation/settings</code></h3><h3 id='methods-get-2'>Methods <code>GET</code></h3>
+<p>Allows you to get the currently active settings for your token</p>
+<h3 id='response-fields-6'>Response fields</h3>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>settings</td>
+<td>Settings</td>
+<td>Settings object</td>
+</tr>
+<tr>
+<td>status</td>
+<td>integer</td>
+<td>HTTP status code</td>
+</tr>
+</tbody></table>
+<h2 id='set-settings'>Set settings</h2>
+<blockquote>
+<p>Request body</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="s2">"reputationPerDay"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"maximumReputation"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"maximumReputationReceivedDay"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"reputationCooldown"</span><span class="p">:</span><span class="mi">86400</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"reputationPerDay"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"maximumReputation"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"maximumReputationReceivedDay"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"reputationCooldown"</span><span class="p">:</span><span class="w"> </span><span class="mi">86400</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S1WJTqQhf"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='endpoint-reputation-settings-2'>Endpoint <code>/reputation/settings</code></h3><h3 id='methods-post-5'>Methods <code>POST</code></h3>
+<p>Allows you to update your settings, none of the fields are required.</p>
+<h3 id='request-fields-4'>Request fields</h3>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+<th>default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>reputationPerDay</td>
+<td>integer</td>
+<td>Number of reputations a user may give out per reputationCooldown</td>
+<td>2</td>
+</tr>
+<tr>
+<td>maximumReputation</td>
+<td>integer</td>
+<td>The maximum reputation a user may receive</td>
+<td>0 (disabled)</td>
+</tr>
+<tr>
+<td>maximumReputationReceivedDay</td>
+<td>integer</td>
+<td>The maximum reputation a user may receive per day</td>
+<td>0 (disabled)</td>
+</tr>
+<tr>
+<td>reputationCooldown</td>
+<td>integer</td>
+<td>Cooldown per reputation, this is set to time in seconds (must be &gt;= 300)</td>
+<td>86400 (1 day)</td>
+</tr>
+</tbody></table>
+<h3 id='response-fields-7'>Response fields</h3>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>settings</td>
+<td>Settings</td>
+<td>Settings object</td>
+</tr>
+<tr>
+<td>status</td>
+<td>integer</td>
+<td>HTTP status code</td>
+</tr>
+</tbody></table>
+<h1 id='settings-api-tama'>Settings API (tama)</h1>
+<p>This API can be used to store abitrary settings of your bot like prefix, user settings and more.</p>
+
+<p>The routes are generally based on the following schema:</p>
+
+<p>Settings /<code>type</code>/<code>id</code></p>
+
+<p>Sub-Settings /<code>type</code>/<code>id</code>/<code>subtype</code>/<code>subid</code></p>
+
+<p>You are <strong>able</strong> to list sub-settings, but <strong>unable</strong> to list settings.</p>
+
+<p>With this in mind, you could use routes similar to this:</p>
+
+<p><code>/guilds/300407204987666432</code> -&gt; store guild wide settings</p>
+
+<p><code>/guilds/300407204987666432/channels/300407204987666432</code> -&gt; store settings for a channel</p>
+
+<p><code>/guilds/300407204987666432/members/128392910574977024</code> -&gt; store settings for a member</p>
+<h2 id='settings-object'>Settings object</h2>
+<blockquote>
+<p>Json representation of settings object</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"339114875769061409"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"guilds"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"accountId"</span><span class="p">:</span><span class="s2">"H1e7U2i8f"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"data"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"prefix"</span><span class="p">:</span><span class="s2">"poi"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"smartrec"</span><span class="p">:</span><span class="kc">true</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>Id of this setting</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>Type of this setting</td>
+</tr>
+<tr>
+<td>accountId</td>
+<td>string</td>
+<td>Internal id associated with the token calling the API</td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>The user-provided data of this setting</td>
+</tr>
+</tbody></table>
+<h2 id='sub-settings-object'>Sub-Settings object</h2>
+<blockquote>
+<p>Json representation of sub-settings object</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"339114875769061409"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"guilds"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"accountId"</span><span class="p">:</span><span class="s2">"HyxjFGfPb"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"data"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"general"</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="s2">"subId"</span><span class="p">:</span><span class="s2">"300407204987666432"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"subType"</span><span class="p">:</span><span class="s2">"channels"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>Id of the parent setting</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>Type of the parent setting</td>
+</tr>
+<tr>
+<td>accountId</td>
+<td>string</td>
+<td>Internal id associated with the token calling the API</td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>The user-provided data of this sub-setting</td>
+</tr>
+<tr>
+<td>subId</td>
+<td>string</td>
+<td>Id of this sub-setting</td>
+</tr>
+<tr>
+<td>subType</td>
+<td>string</td>
+<td>Type of this sub-setting</td>
+</tr>
+</tbody></table>
+<h2 id='get-setting'>Get setting</h2>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"setting"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"339114875769061409"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"guilds"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"H1e7U2i8f"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"prefix"</span><span class="p">:</span><span class="w"> </span><span class="s2">"poi"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"smartrec"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allows you to fetch a setting by type and id.
+<aside class="notice">
+<b>Please make sure to properly cache the setting after you fetched it,
+   especially for something like prefixes,
+   make sure to use a responsible caching behaviour of around 1-5 minutes,
+   to make sure that you don&#39;t spam the API.</b>
+</aside></p>
+<h3 id='endpoint-settings-type-id'>Endpoint <code>/settings/:type/:id</code></h3><h3 id='method-get'>Method <code>GET</code></h3><h3 id='response-fields'>Response fields</h3>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>setting</td>
+<td>Setting</td>
+<td>Setting object</td>
+</tr>
+<tr>
+<td>status</td>
+<td>integer</td>
+<td>HTTP status code</td>
+</tr>
+</tbody></table>
+<h2 id='create-update-setting'>Create/Update setting</h2>
+<blockquote>
+<p>Request body example</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="s2">"prefix"</span><span class="p">:</span><span class="s2">"poi"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"smartrec"</span><span class="p">:</span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"setting"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"339114875769061409"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"guilds"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HyxjFGfPb"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"prefix"</span><span class="p">:</span><span class="w"> </span><span class="s2">"poi"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"smartrec"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allows you to create a new setting/update an existing one.</p>
+
+<p><strong>It overwrites the existing data with the data passed by the user.</strong></p>
+
+<p>So make sure to include changed and not-changed fields so you don&#39;t overwrite anything precious!</p>
+<h3 id='endpoint-settings-type-id-2'>Endpoint <code>/settings/:type/:id</code></h3><h3 id='method-post'>Method <code>POST</code></h3><h3 id='request-fields'>Request fields</h3>
+<p>You may send any kind of json as long as the resulting http request body stays smaller than 10 kilobytes.</p>
+<h3 id='response-fields-2'>Response fields</h3>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>setting</td>
+<td>Setting</td>
+<td>Setting object</td>
+</tr>
+<tr>
+<td>status</td>
+<td>integer</td>
+<td>HTTP status code</td>
+</tr>
+</tbody></table>
+<h2 id='delete-setting'>Delete setting</h2>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Setting deleted"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"setting"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"339114875769061409"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"guilds"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HyxjFGfPb"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"prefix"</span><span class="p">:</span><span class="w"> </span><span class="s2">"awuu"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allows you to delete a setting</p>
+<h3 id='endpoint-settings-type-id-3'>Endpoint <code>/settings/:type/:id</code></h3><h3 id='method-delete'>Method <code>DELETE</code></h3><h3 id='response-fields-3'>Response fields</h3>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>setting</td>
+<td>Setting</td>
+<td>Setting object</td>
+</tr>
+<tr>
+<td>status</td>
+<td>integer</td>
+<td>HTTP status code</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>Informational message</td>
+</tr>
+</tbody></table>
+<h2 id='list-sub-settings'>List sub-settings</h2>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"subsettings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"339114875769061409"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"guilds"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HyxjFGfPb"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"general"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"subId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"300407204987666432"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"subType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"channels"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allows you to get a list of sub-settings for a sub-setting type.</p>
+
+<aside class="notice">
+<b>You don't have to create a parent setting to be able to use the sub-settings of it</b>
+</aside>
+<h3 id='endpoint-settings-type-id-subtype'>Endpoint <code>/settings/:type/:id/:subtype</code></h3><h3 id='method-get-2'>Method <code>GET</code></h3><h3 id='response-fields-4'>Response fields</h3>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>integer</td>
+<td>HTTP status code</td>
+</tr>
+<tr>
+<td>subsettings</td>
+<td>Sub-setting[]</td>
+<td>Array of subsettings</td>
+</tr>
+</tbody></table>
+<h2 id='get-sub-setting'>Get sub-setting</h2>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"subsetting"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"339114875769061409"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"guilds"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HyxjFGfPb"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"general"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"subId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"300407204987666432"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"subType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"channels"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allows you to get a single sub-setting by it&#39;s subId.</p>
+<h3 id='endpoint-settings-type-id-subtype-subid'>Endpoint <code>/settings/:type/:id/:subtype/:subid</code></h3><h3 id='method-get-3'>Method <code>GET</code></h3><h3 id='response-fields-5'>Response fields</h3>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>integer</td>
+<td>HTTP status code</td>
+</tr>
+<tr>
+<td>subsetting</td>
+<td>Sub-setting</td>
+<td>Sub-setting object</td>
+</tr>
+</tbody></table>
+<h2 id='create-update-sub-setting'>Create/Update sub-setting</h2>
+<blockquote>
+<p>Request body</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"general"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response </p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"subsetting"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"339114875769061409"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"guilds"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HyxjFGfPb"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"general"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"subId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"300407204987666432"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"subType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"channels"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allows you to create a new sub-setting/update an existing one.</p>
+
+<p><strong>It overwrites the existing data with the data passed by the user.</strong></p>
+
+<p>So make sure to include changed and not-changed fields so you don&#39;t overwrite anything precious!</p>
+<h3 id='endpoint-settings-type-id-subtype-subid-2'>Endpoint <code>/settings/:type/:id/:subtype/:subid</code></h3><h3 id='method-post-2'>Method <code>POST</code></h3><h3 id='request-fields-2'>Request fields</h3>
+<p>You may send any kind of json as long as the resulting http request body stays smaller than 10 kilobytes.</p>
+<h3 id='response-fields-6'>Response fields</h3>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>subsetting</td>
+<td>Sub-Setting</td>
+<td>Sub-Setting object</td>
+</tr>
+<tr>
+<td>status</td>
+<td>integer</td>
+<td>HTTP status code</td>
+</tr>
+</tbody></table>
+<h2 id='delete-sub-setting'>Delete sub-setting</h2>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Subsetting deleted"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"subsetting"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"339114875769061409"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"guilds"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HyxjFGfPb"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"general"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"subId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"300407204987666432"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"subType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"channels"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allows you to delete a sub-setting</p>
+<h3 id='endpoint-settings-type-id-subtype-subid-3'>Endpoint <code>/settings/:type/:id/:subtype/:subid</code></h3><h3 id='method-delete-2'>Method <code>DELETE</code></h3><h3 id='response-fields-7'>Response fields</h3>
+<table><thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>subsetting</td>
+<td>Sub-Setting</td>
+<td>Sub-Setting object</td>
+</tr>
+<tr>
+<td>status</td>
+<td>integer</td>
+<td>HTTP status code</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>Informational message</td>
+</tr>
+</tbody></table>
+<h1 id='errors'>Errors</h1>
+<p>Weeb.sh uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request is invalid.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Your API key is wrong.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden -- You don&#39;t have permission to use this endpoint.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified resource could not be found.</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+  </div>
+  <div class="dark-box">
+      <div class="lang-selector">
+            <a href="#" data-language-name="shell">shell</a>
+      </div>
+  </div>
+</div>
+</body>
+</html>
